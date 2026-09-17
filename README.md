@@ -3,7 +3,7 @@
 # InfiniteCourses.Org Direct Link Injector
 
 [![Version](https://img.shields.io/badge/Version-1.0-007EC6?style=for-the-badge&logo=codeigniter&logoColor=white)](https://greasyfork.org/en/scripts/596225-infinitecourses-org-direct-link-injector)
-[![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-Install%20Script-FF0000?style=for-the-badge&logo=greasyfork&logoColor=white)](https://greasyfork.org/en/scripts/59622)
+[![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-Install%20Script-FF0000?style=for-the-badge&logo=greasyfork&logoColor=white)](https://greasyfork.org/en/scripts/596225-infinitecourses-org-direct-link-injector)
 [![Tampermonkey](https://img.shields.io/badge/Tampermonkey-Supported-138B44?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://www.tampermonkey.net/)
 [![Violentmonkey](https://img.shields.io/badge/Violentmonkey-Supported-FF8C00?style=for-the-badge&logo=javascript&logoColor=white)](https://violentmonkey.github.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-007EC6?style=for-the-badge&logo=open-source-initiative&logoColor=white)](LICENSE)
