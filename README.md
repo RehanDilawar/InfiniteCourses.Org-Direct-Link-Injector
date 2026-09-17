@@ -2,7 +2,7 @@
 
 # InfiniteCourses.Org Direct Link Injector
 
-[![Version](https://img.shields.io/badge/Version-1.0-007EC6?style=for-the-badge&logo=codeigniter&logoColor=white)](https://github.com/rehandilawar)
+[![Version](https://img.shields.io/badge/Version-1.0-007EC6?style=for-the-badge&logo=codeigniter&logoColor=white)](https://greasyfork.org/en/scripts/596225-infinitecourses-org-direct-link-injector)
 [![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-Install%20Script-FF0000?style=for-the-badge&logo=greasyfork&logoColor=white)](https://greasyfork.org/en/scripts/59622)
 [![Tampermonkey](https://img.shields.io/badge/Tampermonkey-Supported-138B44?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://www.tampermonkey.net/)
 [![Violentmonkey](https://img.shields.io/badge/Violentmonkey-Supported-FF8C00?style=for-the-badge&logo=javascript&logoColor=white)](https://violentmonkey.github.io/)
@@ -51,7 +51,7 @@ Make sure you have an active userscript extension installed in your browser:
 
 ### Step 2: Install the Script
 Install or update to version 1.0 via your manager:  
-👉 **[Install from Greasy Fork](https://greasyfork.org/en/scripts/59622)** 
+👉 **[Install from Greasy Fork](https://greasyfork.org/en/scripts/596225-infinitecourses-org-direct-link-injector)** 
 
 ### Step 3: Usage
 Navigate to any course download page on InfiniteCourses. Scroll down to the download section, and the script will automatically append a "**DIRECT DOWNLOADS**" panel with your extracted links. 
