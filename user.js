@@ -8,10 +8,38 @@
 // @license      MIT
 // @icon         https://www.google.com/s2/favicons?domain=infinitecourses.org
 // @grant        none
+// @updateURL    https://greasyfork.org/scripts/596225/code/script.meta.js
+// @downloadURL  https://greasyfork.org/scripts/596225/code/script.user.js
 // ==/UserScript==
 
 (function() {
     'use strict';
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .ic-direct-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: rgba(74, 222, 128, 0.15);
+            border: 1px solid rgba(74, 222, 128, 0.5);
+            border-radius: 25px;
+            color: #fff !important;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        .ic-direct-link-btn:hover {
+            background: rgba(74, 222, 128, 0.3);
+            transform: translateY(-2px) scale(1.05);
+            border-color: rgba(74, 222, 128, 0.8);
+        }
+    `;
+    document.head.appendChild(style);
 
     setInterval(() => {
         if (!window.location.pathname.startsWith('/course/')) return;
@@ -20,7 +48,6 @@
         if (!downloadSection) return;
 
         if (document.getElementById('ic-direct-links-injected')) return;
-
 
         const customSection = document.createElement('div');
         customSection.id = 'ic-direct-links-injected';
@@ -33,7 +60,7 @@
             font-family: ui-sans-serif, system-ui, sans-serif;
             color: #4ade80;
         `;
-        customSection.innerHTML = `<b>⚡ Fetching Direct Links...If links dont show here, reload the page silly :)</b>`;
+        customSection.innerHTML = `<b>! Fetching Direct Links...If links dont show here, reload the page silly :)</b>`;
         downloadSection.appendChild(customSection);
 
         fetch(window.location.href)
@@ -44,7 +71,7 @@
                 const nextDataEl = doc.getElementById('__NEXT_DATA__');
 
                 if (!nextDataEl) {
-                    customSection.innerHTML = `<b>❌ Failed to find link data on this page ˙◠˙/b>`;
+                    customSection.innerHTML = `<b>L Failed to find link data on this page Y`Y</b>`;
                     return;
                 }
 
@@ -76,7 +103,7 @@
                 }
 
                 const allLinks = { 'Pixeldrain': pixeldrainLinks, 'Send.now': sendNowLinks, 'Other': otherLinks };
-                let htmlContent = `<h3 style="text-align: center; font-size: 1.25rem; font-weight: bold; color: #4ade80; margin-bottom: 15px;">⚡ DIRECT DOWNLOADS</h3>`;
+                let htmlContent = `<h3 style="text-align: center; font-size: 1.25rem; font-weight: bold; color: #4ade80; margin-bottom: 15px;">! DIRECT DOWNLOADS</h3>`;
 
                 for (const [provider, links] of Object.entries(allLinks)) {
                     if (links.length === 0) continue;
@@ -89,24 +116,7 @@
 
                     links.forEach((url, index) => {
                         htmlContent += `
-                            <a href="${url}" target="_blank" style="
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-                                padding: 10px 20px;
-                                background: rgba(74, 222, 128, 0.15);
-                                border: 1px solid rgba(74, 222, 128, 0.5);
-                                border-radius: 25px;
-                                color: #fff;
-                                text-decoration: none;
-                                font-weight: bold;
-                                font-size: 14px;
-                                transition: all 0.2s ease;
-                                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-                                backdrop-filter: blur(8px);
-                            "
-                            onmouseover="this.style.background='rgba(74, 222, 128, 0.3)'; this.style.transform='translateY(-2px) scale(1.05)'; this.style.borderColor='rgba(74, 222, 128, 0.8)';"
-                            onmouseout="this.style.background='rgba(74, 222, 128, 0.15)'; this.style.transform='translateY(0) scale(1)'; this.style.borderColor='rgba(74, 222, 128, 0.5)';">
+                            <a href="${url}" target="_blank" class="ic-direct-link-btn">
                                 <svg style="margin-right: 6px;" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                                     <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
@@ -123,7 +133,7 @@
             })
             .catch(e => {
                 console.error('Error fetching course data:', e);
-                customSection.innerHTML = `<b>❌ Network error fetching links :(>`;
+                customSection.innerHTML = `<b>L Network error fetching links :(</b>`;
             });
 
     }, 500);
